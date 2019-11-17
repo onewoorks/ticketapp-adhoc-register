@@ -1,16 +1,55 @@
 <template>
-  <v-container>
-    <RegistrationPage />
-  </v-container>
+  <div>
+    <div v-if="screen_register != null">
+      <EventInfo :event_detail="event_info" />
+      <RegistrationPage :event_detail="event_info" />
+    </div>
+    <div v-else>
+      <LocalStorageData />
+      <Home />
+      
+    </div>
+  </div>
 </template>
 
 <script>
-import RegistrationPage from '@/components/RegistrationPage.vue'
+import Axios from "axios";
+import Home from "@/components/Home";
+import EventInfo from "@/components/EventInfo";
+import RegistrationPage from "@/components/RegistrationPage.vue";
+import LocalStorageData from "@/components/RetrieveLocalStorage"
 
 export default {
-  name: 'home',
+  name: "home",
   components: {
-    RegistrationPage
+    RegistrationPage,
+    EventInfo,
+    Home,
+    LocalStorageData
+  },
+  data: function() {
+    return {
+      event_info: null,
+      screen_register: null
+    };
+  },
+  mounted: function() {
+    let event_code = this.$route.params.event_code;
+    if (typeof event_code !== "undefined") {
+      if(event_code != 'view-qrcode' && event_code != 'scanner'){
+        Axios.get(`${process.env.VUE_APP_ATTENDANCE_URL}/event/info/${event_code}`).then(
+        response => {
+          this.event_info = response.data;
+          this.screen_register = true
+        }
+      );
+      } else {
+        this.$router.push({
+          name: 'home'
+        })
+      }
+      
+    }
   }
-}
+};
 </script>

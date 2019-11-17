@@ -3,21 +3,20 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Confirmation from '../views/Confirmation'
 import QrCode from '../views/QrCode'
+import ViewQrCode from '../views/ViewQrCode'
+import QrScanner from '../components/QrReader'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/:event_code?',
     name: 'home',
-    component: Home
+    component: Home,
   },
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
@@ -29,6 +28,16 @@ const routes = [
     path: '/qr-code',
     name: 'qrcode',
     component: QrCode
+  },
+  {
+    path: '/view-qrcode',
+    name: 'viewqrcode',
+    component: ViewQrCode
+  },
+  {
+    path: '/scanner',
+    name: 'qrscanner',
+    component: QrScanner
   }
 ]
 

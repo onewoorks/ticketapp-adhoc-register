@@ -5,7 +5,7 @@
       color="purple"
       dark
     >
-      <div class="d-flex align-center" style='text-align:center; font-weight:bold'>
+      <div class="d-flex" style='font-weight:bold'>
           TICKET APPS
       </div>
 

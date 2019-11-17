@@ -32,7 +32,7 @@
 
                 <v-col cols="12" md="12">
                   <v-text-field
-                    :counter="10"
+                    :counter="12"
                     label="Identification No"
                     required
                     v-model="product.identification_no"

@@ -36,7 +36,7 @@ export default {
   mounted: function() {
     let event_code = this.$route.params.event_code;
     if (typeof event_code !== "undefined") {
-      if(event_code != 'view-qrcode' && event_code != 'scanner'){
+      if(event_code != 'view-qrcode'){
         Axios.get(`${process.env.VUE_APP_ATTENDANCE_URL}/event/info/${event_code}`).then(
         response => {
           this.event_info = response.data;

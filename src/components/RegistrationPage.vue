@@ -39,7 +39,7 @@ export default {
           email             : "",
           register_mode     : "on_event",
           event_id          : this.event_detail.id,
-          ticket_price      : this.event_detail.charges.find(el => el.mode === "on_event").charge
+          ticket_price      : this.event_detail.charges
         } 
       ],
       productSelected: {}

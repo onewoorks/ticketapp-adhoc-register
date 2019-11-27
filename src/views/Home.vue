@@ -1,8 +1,8 @@
 <template>
   <div>
     <div v-if="screen_register != null">
-      <EventInfo :event_detail="event_info" />
-      <RegistrationPage :event_detail="event_info" />
+      <EventInfo :event_detail="event_info" @picked_ticket="handle_pick_ticket" />
+      <RegistrationPage :event_detail="event_info" v-if="picked_ticket != null" />
     </div>
     <div v-else>
       <LocalStorageData />
@@ -30,8 +30,17 @@ export default {
   data: function() {
     return {
       event_info: null,
-      screen_register: null
+      screen_register: null,
+      picked_ticket: null
     };
+  },
+  methods: {
+    picked_the_ticket: function(ticket_code){
+      console.log(ticket_code)
+    },
+    handle_pick_ticket: function(ticket){
+      this.picked_ticket = ticket
+    }
   },
   mounted: function() {
     let event_code = this.$route.params.event_code;

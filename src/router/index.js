@@ -10,7 +10,12 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/:event_code?',
+    path: '/e/:event_code?',
+    name: 'event_code',
+    component: Home,
+  },
+  {
+    path: '/',
     name: 'home',
     component: Home,
   },

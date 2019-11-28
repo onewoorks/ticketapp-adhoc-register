@@ -70,7 +70,7 @@ export default {
       promise.catch(console.error);
     },
     onDecode(result) {
-        let found = result.split('https://192.168.0.198:8080/')
+        // let found = result.split('https://192.168.0.198:8080/')
         window.location.href = result
     },
     onClose() {

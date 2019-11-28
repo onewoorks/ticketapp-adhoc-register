@@ -6,7 +6,7 @@
                 {{ event_detail.event_info.event_name.toUpperCase() }}
             </v-card-title>
             <qrcode 
-                value="Hello, World!999" 
+                :value="ticket.event_code+'-'+ticket.id+'-'+ticket.register_code" 
                 :options="{ width: 200 }"></qrcode> 
             <v-card-text>
                 <div class='qrcode_code'>{{ ticket.qr_code.toUpperCase() }}</div>

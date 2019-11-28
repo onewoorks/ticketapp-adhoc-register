@@ -2,12 +2,14 @@
   <div>
     <div v-if="screen_register != null">
       <EventInfo :event_detail="event_info" @picked_ticket="handle_pick_ticket" />
-      <RegistrationPage :event_detail="event_info" v-if="picked_ticket != null" />
+      <RegistrationPage 
+        :event_detail="event_info" 
+        v-if="picked_ticket != null" 
+        :ticket_price="picked_ticket" />
     </div>
     <div v-else>
       <LocalStorageData />
       <Home />
-      
     </div>
   </div>
 </template>

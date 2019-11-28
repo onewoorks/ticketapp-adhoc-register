@@ -5,7 +5,7 @@
       <v-card v-for="(ticket, index) in tickets" :key="index"
       class='text-center qrcode_card'>
         <v-card-title class="justify-center">{{ event_detail.event_info.event_name.toUpperCase() }}</v-card-title>
-        <qrcode value="Hello, World!999" :options="{ width: 200 }"></qrcode>
+        <qrcode :value="ticket.qr_code" :options="{ width: 200 }"></qrcode>
         <v-card-text>
           <div class="qrcode_code">{{ ticket.qr_code.toUpperCase() }}</div>
           <div class="qrcode_name">{{ ticket.fullname.toUpperCase() }}</div>

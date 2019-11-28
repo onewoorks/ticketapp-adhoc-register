@@ -14,7 +14,7 @@
                 <div>Identification no : {{person.identification_no}}</div>    
                 <div>Mobile No : {{person.phone_no}}</div>
                 <div>Email : {{person.email}}</div>
-                <div style="text-align: right; font-weight:bold">RM {{ person.ticket_price.toFixed(2)}}</div>
+                <div style="text-align: right; font-weight:bold">RM {{ person.ticket_price.charge.toFixed(2)}}</div>
             </v-card-text>
         </v-card>
 
@@ -27,7 +27,7 @@
             </v-card-text>
         </v-card>
 
-        </v-container>>
+        </v-container>
         <v-btn 
             style="margin-top:20px; position:fixed; bottom:0; border-radius:0"
             @click="submit_registration" block x-large color="primary">
@@ -60,7 +60,7 @@
             },
             add_charges: function(){
                 this.persons.map((k)=>{
-                    this.total_charges += parseFloat(k.ticket_price.toFixed(2))
+                    this.total_charges += parseFloat(k.ticket_price.charge.toFixed(2))
                 })
             },
             submit_registration: function() {

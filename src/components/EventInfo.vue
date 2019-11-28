@@ -14,6 +14,7 @@
                     @click="picked_ticket(charges)"
                 >
                 <div>{{ charges.mode }} </div>
+                <div> | </div>
                 <div>RM {{ charges.charge }}</div>
             </v-btn>
             </div>

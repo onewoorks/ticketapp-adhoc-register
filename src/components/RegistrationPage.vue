@@ -2,7 +2,7 @@
   <div>
     <v-container style="margin-bottom:60px">
       <PersonForm 
-        :products="listPersons" />
+        :products="listPersons" :ticket_price="ticket_price" />
 
       <v-btn @click="tambah_person" block x-large color="primary" text>ADD NEW MEMBER</v-btn>
     </v-container>
@@ -22,7 +22,7 @@
 import PersonForm from "@/components/PersonForm";
 export default {
   name: "registerpage",
-  props: ["event_detail"],
+  props: ["event_detail", "ticket_price"],
   components: {
     PersonForm
   },
@@ -39,10 +39,11 @@ export default {
           email             : "",
           register_mode     : "on_event",
           event_id          : this.event_detail.id,
-          ticket_price      : this.event_detail.charges
+          ticket_price      : this.ticket_price
         } 
       ],
-      productSelected: {}
+      productSelected: {},
+      ticket_price_picked: 0
     };
   },
   methods: {
@@ -55,7 +56,7 @@ export default {
         email             : "",
         register_mode     : "on_event",
         event_id          : this.event_detail.id,
-        ticket_price      : this.event_detail.charges.find(el => el.mode === "on_event").charge
+        ticket_price      : this.ticket_price
       }
       this.listPersons.push(empty_person);
     },

@@ -19,7 +19,7 @@
           <v-card-text>
             <div>
               <v-row>
-                
+                <v-col class='text-right' cols="12"><h2>RM {{ ticket_price.charge.toFixed(2) }}</h2></v-col>
                 <v-col cols="12" md="12">
                   <v-text-field
                     :counter="120"
@@ -75,19 +75,25 @@
 
 <script>
 export default {
-  props: ["products"],
+  props: ["products", "ticket_price"],
   data: function() {
     return {
-      productSelected: {}
+      productSelected: {},
+      // price: this.props.ticket_price
     };
+  },
+  mounted: function(){
+    console.log(this.ticket_price)
   },
 
   methods: {
     showDetailModal: function(product) {
       this.productSelected = product;
+      // this.productSelected['ticket_price'] = this.ticket_price
       this.$emit("clicked-show-detail", product);
     },
     detail_filled: function(product) {
+      // product['ticket_price'] = this.ticket_price
       this.$emit("clicked-show-detail", product);
     },
     remove_person: function(product_index) {

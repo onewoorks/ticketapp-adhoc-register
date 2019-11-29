@@ -7,6 +7,7 @@
         :product="product"
         :index="index"
         :key="product.id"
+        :id="'person-'+index"
       >
         <v-card class="mx-auto" max-width="600" style="margin-bottom:20px;">
           <v-img

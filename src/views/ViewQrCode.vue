@@ -3,10 +3,18 @@
     <v-container style="margin-bottom:30px;">
         <div id="content">
       <v-card v-for="(ticket, index) in tickets" :key="index"
-      class='text-center qrcode_card'>
-        <v-card-title class="justify-center">{{ event_detail.event_info.event_name.toUpperCase() }}</v-card-title>
+      class='text-center qrcode_card'
+      >
+  
+      <center>
+        <v-img src='/images/events/4/teraju-logo.jpg' alt="" width="300px"/>
+        <div style="font-weight:bold; font-size: 1.3em">{{ event_detail.event_info.event_name.toUpperCase() }}</div>
+        
+        <v-img src='/images/events/4/logo-jana.png' alt="" width="130px" />
+      </center>
+        
         <qrcode :value="ticket.event_code+'-'+ticket.id+'-'+ticket.register_code" :options="{ width: 200 }"></qrcode>
-        <v-card-text>
+        <v-card-text style="position:relative; color:#000000">
           <div class="qrcode_code">{{ ticket.qr_code.toUpperCase() }}</div>
           <div class="qrcode_name">{{ ticket.fullname.toUpperCase() }}</div>
           <div>{{ ticket.email }}</div>
@@ -15,7 +23,11 @@
           <div>{{ ticket.register_mode }} | RM {{ ticket.charges.toFixed(2)}}</div>
         </v-card-text>
        
+          <v-img src='/images/events/4/teh-tarik-2.png' width="300px" style="opacity:0.5" />
+          <v-img src='/images/events/4/logo-baru.png' width="100px" style="position:absolute; bottom:10px; right:10px"/>
+    
       </v-card>
+      
        </div>
     </v-container>
   </div>

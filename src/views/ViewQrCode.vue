@@ -1,6 +1,7 @@
+
 <template>
   <div>
-    <v-container style="margin-bottom:30px;">
+    <v-container style="margin-bottom:0px;">
         <div id="content">
       <v-card v-for="(ticket, index) in tickets" :key="index"
       class='text-center qrcode_card'
@@ -13,8 +14,8 @@
         <v-img src='/images/events/4/logo-jana.png' alt="" width="130px" />
       </center>
         
-        <qrcode :value="ticket.event_code+'-'+ticket.id+'-'+ticket.register_code" :options="{ width: 200 }"></qrcode>
-        <v-card-text style="position:relative; color:#000000">
+        <qrcode :value="ticket.event_code+'-'+ticket.id+'-'+ticket.register_code" :options="{ width: 200 }" style="z-index:200; position:relative"></qrcode>
+        <v-card-text style="position:relative; color:#000000; z-index:10">
           <div class="qrcode_code">{{ ticket.qr_code.toUpperCase() }}</div>
           <div class="qrcode_name">{{ ticket.fullname.toUpperCase() }}</div>
           <div>{{ ticket.email }}</div>
@@ -23,8 +24,8 @@
           <div>{{ ticket.register_mode }} | RM {{ ticket.charges.toFixed(2)}}</div>
         </v-card-text>
        
-          <v-img src='/images/events/4/teh-tarik-2.png' width="300px" style="opacity:0.5" />
-          <v-img src='/images/events/4/logo-baru.png' width="100px" style="position:absolute; bottom:10px; right:10px"/>
+          <v-img src='/images/events/4/teh-tarik-2.png' width="300px" style="opacity:0.5; margin-top:-200px" />
+          <v-img src='/images/events/4/ticket-apps.jpg' width="100px" style="position:absolute; bottom:10px; right:10px"/>
     
       </v-card>
       

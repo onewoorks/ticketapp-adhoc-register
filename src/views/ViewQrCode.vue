@@ -24,7 +24,7 @@
           <div>{{ ticket.register_mode }} | RM {{ ticket.charges.toFixed(2)}}</div>
         </v-card-text>
        
-          <v-img src='/images/events/4/teh-tarik-2.png' width="300px" style="opacity:0.5; margin-top:-200px" />
+          <v-img src='/images/events/4/janadoc.jpg' style="opacity:0.5; margin-top:-200px" />
           <v-img src='/images/events/4/ticket-apps.jpg' width="100px" style="position:absolute; bottom:10px; right:10px"/>
     
       </v-card>

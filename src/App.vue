@@ -4,7 +4,7 @@
       <div class="d-flex" style="font-weight:bold" @click="go_to_home">TICKET APPS</div>
     </v-app-bar>
 
-    <v-content style="height:800px;">
+    <v-content style="height:800px; background-color:#ffffff">
       <router-view />
     </v-content>
   </v-app>

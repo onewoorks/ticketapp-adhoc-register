@@ -59,6 +59,17 @@
                   ></v-text-field>
                 </v-col>
 
+                <v-col cols="12" md="12">
+                  <v-textarea
+                    v-model="product.remark"
+                    @change="detail_filled"
+                    label="Remark"
+                    auto-grow="autoGrow"
+                    
+                    
+                  ></v-textarea>
+                </v-col>
+
               </v-row>
             </div>
           </v-card-text>

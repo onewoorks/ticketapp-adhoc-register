@@ -8,9 +8,10 @@
           </div>
         </v-card-title>
         <v-card-text>
-          <div>Identification no : {{person.identification_no}}</div>
-          <div>Mobile No : {{person.phone_no}}</div>
-          <div>Email : {{person.email}}</div>
+          <div><strong>Identification no :</strong> {{person.identification_no}}</div>
+          <div><strong>Mobile No : </strong>{{person.phone_no}}</div>
+          <div><strong>Email :</strong> {{person.email}}</div>
+          <div><strong>Remark : </strong>{{ person.remark }}</div>
           <div
             style="text-align: right; font-weight:bold"
           >RM {{ person.ticket_price.charge.toFixed(2)}}</div>

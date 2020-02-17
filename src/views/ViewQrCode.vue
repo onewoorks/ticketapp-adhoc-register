@@ -14,7 +14,7 @@
         <v-img src='/images/events/4/logo-jana.png' alt="" width="130px" />
       </center>
         
-        <qrcode :value="ticket.event_code+'-'+ticket.id+'-'+ticket.register_code" :options="{ width: 200 }" style="z-index:200; position:relative"></qrcode>
+        <qrcode :value="ticket.event_code+'-'+ticket.id+'-'+ticket.register_code" :options="{ width: 200 }" style="z-index:2; position:relative"></qrcode>
         <v-card-text style="position:relative; color:#000000; z-index:10">
           <div class="qrcode_code">{{ ticket.qr_code.toUpperCase() }}</div>
           <div class="qrcode_name">{{ ticket.fullname.toUpperCase() }}</div>
@@ -24,7 +24,7 @@
           <div>{{ ticket.register_mode }} | RM {{ ticket.charges.toFixed(2)}}</div>
         </v-card-text>
        
-          <v-img src='/images/events/4/janadoc.jpg' style="opacity:0.5; margin-top:-200px" />
+          <v-img src='/images/events/4/janadoc.jpg' style="opacity:0.5; margin-top:-100px" />
           <v-img src='/images/events/4/ticket-apps.jpg' width="100px" style="position:absolute; bottom:10px; right:10px"/>
     
       </v-card>

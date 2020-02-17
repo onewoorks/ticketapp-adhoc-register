@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <v-container >
         <v-card v-for="(ticket, index) in tickets" :key="index" 
             class='text-center qrcode_card' >
             <center>
@@ -10,8 +10,8 @@
       </center>
             <qrcode 
                 :value="ticket.event_code+'-'+ticket.id+'-'+ticket.register_code" 
-                :options="{ width: 200 }" style="z-index:200; position:relative"></qrcode> 
-            <v-card-text style="position:relative; color:#000000; z-index:10">
+                :options="{ width: 200 }" style="z-index:1; position:relative"></qrcode> 
+            <v-card-text style="position:relative; color:#000000; z-index:1">
                 <div class='qrcode_code'>{{ ticket.qr_code.toUpperCase() }}</div>
                 <div class='qrcode_name'>{{ ticket.fullname.toUpperCase() }}</div>  
             <div>{{ ticket.email }}</div>
@@ -19,7 +19,7 @@
             <div>{{ ticket.identification_no}}</div>    
             </v-card-text>
 
-             <v-img src='/images/events/4/janadoc.jpg' style="opacity:0.5; margin-top:-200px" />
+             <v-img src='/images/events/4/janadoc.jpg' style="opacity:0.5; margin-top:-100px" />
           <v-img src='/images/events/4/ticket-apps.jpg' width="100px" style="position:absolute; bottom:10px; right:10px"/>
         </v-card>
         

@@ -40,7 +40,6 @@ export default {
   },
   methods: {
     picked_the_ticket: function(ticket_code) {
-      console.log(ticket_code);
     },
     handle_pick_ticket: function(ticket) {
       this.picked_ticket = ticket;

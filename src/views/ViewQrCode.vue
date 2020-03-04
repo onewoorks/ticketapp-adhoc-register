@@ -7,12 +7,7 @@
       class='text-center qrcode_card'
       >
   
-      <center>
-        <v-img src='/images/events/4/teraju-logo.jpg' alt="" width="300px"/>
-        <div style="font-weight:bold; font-size: 1.3em">{{ event_detail.event_info.event_name.toUpperCase() }}</div>
-        
-        <v-img src='/images/events/4/logo-jana.png' alt="" width="130px" />
-      </center>
+      <div style="font-weight:bold; font-size: 1.5em; padding-top:20px">{{ event_detail.event_info.event_name.toUpperCase() }}</div>
         
         <qrcode :value="ticket.event_code+'-'+ticket.id+'-'+ticket.register_code" :options="{ width: 200 }" style="z-index:2; position:relative"></qrcode>
         <v-card-text style="position:relative; color:#000000; z-index:10">
@@ -23,9 +18,6 @@
           <div>{{ ticket.identification_no}}</div>
           <div>{{ ticket.register_mode }} | RM {{ ticket.charges.toFixed(2)}}</div>
         </v-card-text>
-       
-          <v-img src='/images/events/4/janadoc.jpg' style="opacity:0.5; margin-top:-100px" />
-          <v-img src='/images/events/4/ticket-apps.jpg' width="100px" style="position:absolute; bottom:10px; right:10px"/>
     
       </v-card>
       

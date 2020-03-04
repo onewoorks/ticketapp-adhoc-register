@@ -1,7 +1,8 @@
 <template>
   <v-app>
     <v-app-bar app color="purple" dark>
-      <div class="d-flex" style="font-weight:bold" @click="go_to_home">TICKET APPS</div>
+      <img src='https://ticketapps.onewoorks-solutions.com/images/common/ticketapps.png' class='img-fluid' style="height:100%;" />
+      <div class="d-flex" style="font-weight:bold; margin-left:10px" @click="go_to_home"> TICKETAPPS</div>
     </v-app-bar>
 
     <v-content style="height:800px; background-color:#ffffff">

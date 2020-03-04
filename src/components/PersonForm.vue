@@ -64,7 +64,7 @@
                     v-model="product.remark"
                     @change="detail_filled"
                     label="Remark"
-                    auto-grow="autoGrow"
+                    :auto-grow=true
                     
                     
                   ></v-textarea>
